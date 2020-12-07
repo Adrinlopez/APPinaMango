@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "687098877508",
+    "project_id": "apppinamango",
+    "storage_bucket": "apppinamango.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687098877508:android:83cec446f9a6ce23884e11",
+        "android_client_info": {
+          "package_name": "com.example.apppiamango"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687098877508-84fci00f3vu45o2oleqndvpr816add95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-Wvec0z6q2hoTzQ3CdGUw-WQmJ8UxZOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687098877508-84fci00f3vu45o2oleqndvpr816add95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
