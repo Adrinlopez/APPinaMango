@@ -4,33 +4,30 @@ import java.io.Serializable;
 
 public class Entidad implements Serializable {
     private int imgFoto;
-    private String Contenido;
-    private String descripcion;
-    private String Nombre;
+    private String titulo;
+    private String contenido;
+    private String precio;
 
-    public Entidad(int imgFoto, String contenido, String descripcion, String nombre) {
+    public Entidad(int imgFoto, String titulo, String contenido, String precio) {
         this.imgFoto = imgFoto;
-
-       this.Contenido = contenido;
-        this.descripcion = descripcion;
-        this.Nombre = nombre;
+        this.titulo = titulo;
+        this.contenido = contenido;
+        this.precio = precio;
     }
 
     public int getImgFoto() {
         return imgFoto;
     }
 
-
+    public String getTitulo() {
+        return titulo;
+    }
 
     public String getContenido() {
-        return Contenido;
+        return contenido;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public String getNombre() {
-        return Nombre;
+    public String getPrecio() {
+        return precio;
     }
 }

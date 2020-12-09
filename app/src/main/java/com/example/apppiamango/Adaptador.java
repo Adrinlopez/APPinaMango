@@ -1,6 +1,7 @@
 package com.example.apppiamango;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,22 +12,23 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class Adaptador extends BaseAdapter {
+    private ArrayList<Entidad> listEntidad;
     private Context context;
-    private ArrayList<Entidad>listItems;
+    private LayoutInflater inflater;
 
-    public Adaptador(Context context, ArrayList<Entidad> listItems) {
+    public Adaptador(Context context, ArrayList<Entidad> listEntidad) {
         this.context = context;
-        this.listItems = listItems;
+        this.listEntidad = listEntidad;
     }
 
     @Override
     public int getCount() {
-        return listItems.size();
+        return listEntidad.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return listItems.get(position);
+        return listEntidad.get(position);
     }
 
     @Override
@@ -36,20 +38,31 @@ public class Adaptador extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-      final   Entidad menu =(Entidad) getItem(position);
-        convertView = LayoutInflater.from(context).inflate(R.layout.menu,null);
-         TextView name =(TextView) convertView.findViewById(R.id.name);
-        TextView restorant_name =(TextView) convertView.findViewById(R.id.restorant_name);
-        TextView price =(TextView) convertView.findViewById(R.id.price);
-        ImageView food_image =(ImageView) convertView.findViewById(R.id.food_image);
+        // OBTENER EL OBJETO POR CADA ITEM A MOSTRAR
+        final Entidad entidad = (Entidad) getItem(position);
 
+        // CREAMOS E INICIALIZAMOS LOS ELEMENTOS DEL ITEM DE LA LISTA
+        convertView = LayoutInflater.from(context).inflate(R.layout.menu, null);
+        ImageView imgFoto = (ImageView) convertView.findViewById(R.id.imgFoto);
+        TextView tvTitulo = (TextView) convertView.findViewById(R.id.tvTitulo);
+        TextView tvContenido = (TextView) convertView.findViewById(R.id.tvContenido);
+        TextView  tvprecio = (TextView) convertView.findViewById(R.id.tvprecio);
 
-        food_image.setImageResource(menu.getImgFoto());
-        name.setText(menu.getNombre());
-        restorant_name.setText(menu.getContenido());
-        price.setText(menu.getDescripcion());
+        // LLENAMOS LOS ELEMENTOS CON LOS VALORES DE CADA ITEM
+        imgFoto.setImageResource(entidad.getImgFoto());
+        tvTitulo.setText(entidad.getTitulo());
+        tvContenido.setText(entidad.getContenido());
+        tvprecio.setText(entidad.getPrecio());
 
-
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, MenuDetalle.class);
+                i.putExtra("item", entidad);
+                context.startActivity(i);
+                System.out.println("Click !!");
+            }
+        });
 
         return convertView;
     }

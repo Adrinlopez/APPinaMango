@@ -1,55 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent">
 
 
-
     <ImageView
-        android:id="@+id/food_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:src="@drawable/asiafood2"
-        >
+        android:id="@+id/imgFoto"
+        android:layout_width="0dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
+
     <TextView
-        android:id="@+id/name"
-        android:text="Float Cake Vietnam"
-        android:gravity="center"
+        android:id="@+id/tvDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
+        android:textColor="#333333"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:paddingBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgFoto" />
 
-    </TextView>
 
 
     <TextView
-        android:id="@+id/restorant_name"
-        android:text="Goku"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </TextView>
+        android:id="@+id/tvprecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="#3F9785"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
     <TextView
-        android:id="@+id/price"
-        android:text="$6.05"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:id="@+id/tvTitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="serif-monospace"
+        android:lineSpacingExtra="2dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvprecio"
+        app:layout_constraintTop_toBottomOf="@+id/tvprecio" />
+    <Button
+        android:id="@+id/btnCarrito"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/add_to_cart_bg"
+        android:fontFamily="sans-serif-black"
+        android:text="Añadir al carrito"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    </TextView>
+    <Button
+        android:id="@+id/btnfav"
+        android:layout_width="54dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/ic_baseline_favorite_24"
+        android:fontFamily="sans-serif-black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvprecio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

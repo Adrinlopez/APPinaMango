@@ -8,27 +8,25 @@ import android.widget.TextView;
 import com.example.apppiamango.Entidad;
 
 public class MenuDetalle extends AppCompatActivity {
-
-    private Entidad menu;
-
-    private TextView nombre,restorant_name,price;
-    private ImageView food_image;
+    private TextView tvTitulo, tvDescripcion,tvprecio;
+    private ImageView imgFoto;
+    private Entidad item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_detalle);
-        menu =(Entidad) getIntent().getSerializableExtra("ObjetoData");
-        nombre =(TextView) findViewById(R.id.name);
-        restorant_name =(TextView) findViewById(R.id.restorant_name);
-        price =(TextView) findViewById(R.id.price);
-        food_image = (ImageView)findViewById(R.id.food_image);
+        item = (Entidad) getIntent().getSerializableExtra("item");
+        if (item != null){
+            tvTitulo = findViewById(R.id.tvTitulo);
+            tvDescripcion = findViewById(R.id.tvDescripcion);
+            imgFoto = findViewById(R.id.imgFoto);
+            tvprecio = findViewById(R.id.tvprecio);
 
-
-
-
-
-
-
+            tvTitulo.setText(item.getTitulo());
+            tvDescripcion.setText(item.getContenido());
+            imgFoto.setImageResource(item.getImgFoto());
+            tvprecio.setText(item.getPrecio());
+        }
     }
 }

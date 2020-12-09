@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     app:cardCornerRadius="15dp"
@@ -15,54 +15,50 @@
         android:padding="5dp">
 
         <ImageView
-            android:id="@+id/food_image"
+            android:id="@+id/imgFoto"
             android:layout_width="102dp"
             android:layout_height="100dp"
             android:adjustViewBounds="true"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/asiafood2" >
+            app:layout_constraintTop_toTopOf="parent">
 
         </ImageView>
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/tvTitulo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:fontFamily="serif-monospace"
-            android:text="Float Cake Vietnam"
+            android:fontFamily="sans-serif-condensed"
             android:textColor="#091020"
             android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="@+id/restorant_name"
-            app:layout_constraintTop_toBottomOf="@+id/restorant_name" />
+            app:layout_constraintStart_toStartOf="@+id/tvContenido"
+            app:layout_constraintTop_toBottomOf="@+id/tvContenido" />
 
         <TextView
-            android:id="@+id/price"
+            android:id="@+id/tvprecio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
-            android:fontFamily="serif-monospace"
-            android:text="$6.05"
+            android:fontFamily="sans-serif-black"
             android:textColor="#FF6813"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/food_image"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFoto"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/restorant_name"
+            android:id="@+id/tvContenido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:fontFamily="serif-monospace"
-            android:text="Piña Mango"
+            android:fontFamily="sans-serif-black"
             android:textColor="#F06941"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/food_image"
+            app:layout_constraintStart_toEndOf="@+id/imgFoto"
             app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

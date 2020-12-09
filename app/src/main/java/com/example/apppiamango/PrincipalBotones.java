@@ -7,8 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
-public class PrincipalBotones extends AppCompatActivity implements View.OnClickListener{
+public class PrincipalBotones extends AppCompatActivity implements View.OnClickListener {
 
     ImageButton btnMenu, btnFavoritos, btnCarrito;
 
@@ -28,17 +29,26 @@ public class PrincipalBotones extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        Intent intMenu = new Intent(this, Inicio.class);
-        startActivity(intMenu);
-    }
-    public void onClick2(View v){
-        Intent intFavorito = new Intent(this, Registro.class);
-        startActivity(intFavorito);
-    }
-    public void onClick3(View v){
-        Intent intCarrito = new Intent(this, Registro.class);
-        startActivity(intCarrito);
-    }
+        switch (v.getId()) {
+            case R.id.btn_menu:
+                Intent in1 = new Intent(this, Inicio.class);
+                startActivity(in1);
+                break;
+        }
+            switch (v.getId()) {
+                case R.id.btn_favoritos:
+                    Intent in2 = new Intent(this, Inicio.class);
+                    startActivity(in2);
+                    break;
+            }
+                switch (v.getId()) {
+                    case R.id.btn_favoritos:
+                        Intent in3 = new Intent(this, Inicio.class);
+                        startActivity(in3);
+                        break;
+
+                }
+            }
+        }
 
 
-}

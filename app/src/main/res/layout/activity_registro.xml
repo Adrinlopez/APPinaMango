@@ -76,14 +76,6 @@
             android:text="CREAR CUENTA"
             android:textColor="#fff"
             android:textSize="16sp" />
-        <Button
-            android:id="@+id/btn_ir_inicioSesion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:background="@android:color/transparent"
-            android:text="Iniciar Sesión"
-            android:textColor="#fff" />
 
         <LinearLayout
             android:layout_width="match_parent"
