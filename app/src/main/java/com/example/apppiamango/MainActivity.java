@@ -14,10 +14,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener{
+
     EditText edtCorreo, edtContra;
     Button btnLogin, btn_ir_crearCuenta;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +33,6 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         btnLogin.setOnClickListener(this);
         btn_ir_crearCuenta.setOnClickListener(this);
     }
-
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -51,14 +48,10 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                     if (edtContra.getText().toString().isEmpty()) {
                         Toast.makeText(this, "Campo Contraseña Vacio", Toast.LENGTH_LONG).show();
                     } else {
-                        Intent in = new Intent(this, Inicio.class);
+                        Intent in = new Intent(this, PrincipalBotones.class);
                         startActivity(in);
                         break;
-
-
                     }
-
-
                 }
         }
     }

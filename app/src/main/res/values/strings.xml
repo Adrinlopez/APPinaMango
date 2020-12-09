@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">pinaMangoApp</string>
+    <string name="btnMenu">MENU</string>
+    <string name="btnFevorito">FAVORITOS</string>
+    <string name="btnCarrito">CARRITO</string>
 </resources>
