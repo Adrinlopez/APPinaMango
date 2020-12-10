@@ -94,8 +94,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                    });
-
-
        }
 
     @Override
@@ -110,12 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intencion = new Intent(getApplicationContext(), Registro.class);
                 startActivity(intencion);
                 break;
-        }
-
-
-
-
-
+             }
 
         }
 

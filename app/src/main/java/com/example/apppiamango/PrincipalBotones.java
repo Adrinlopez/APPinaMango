@@ -7,9 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
-public class PrincipalBotones extends AppCompatActivity implements View.OnClickListener {
+public class PrincipalBotones extends AppCompatActivity implements View.OnClickListener{
 
     ImageButton btnMenu, btnFavoritos, btnCarrito;
 
@@ -23,32 +22,25 @@ public class PrincipalBotones extends AppCompatActivity implements View.OnClickL
         btnCarrito = findViewById(R.id.btn_carrito);
 
         btnMenu.setOnClickListener(this);
-        btnFavoritos.setOnClickListener(this);
-        btnCarrito.setOnClickListener(this);
+        btnFavoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intFavorito = new Intent(PrincipalBotones.this, Favoritos.class);
+                startActivity(intFavorito);
+            }
+        });
+        btnCarrito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intCarrito = new Intent(PrincipalBotones.this, Carrito.class);
+                startActivity(intCarrito);
+            }
+        });
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_menu:
-                Intent in1 = new Intent(this, Inicio.class);
-                startActivity(in1);
-                break;
-        }
-            switch (v.getId()) {
-                case R.id.btn_favoritos:
-                    Intent in2 = new Intent(this, Inicio.class);
-                    startActivity(in2);
-                    break;
-            }
-                switch (v.getId()) {
-                    case R.id.btn_favoritos:
-                        Intent in3 = new Intent(this, Inicio.class);
-                        startActivity(in3);
-                        break;
-
-                }
-            }
-        }
-
-
+        Intent intMenu = new Intent(this, Inicio.class);
+        startActivity(intMenu);
+    }
+}
